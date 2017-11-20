@@ -29,6 +29,8 @@
     console.log('Started on port 3000');
   });
 
+  module.exports = {app};
+
   // var newUser = new User({
   //   email: 'hemanth019@gmail.com'
   // })
