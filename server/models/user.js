@@ -47,7 +47,7 @@ var UserSchema = new mongoose.Schema({
     var token = jwt.sign({_id: user._id.toHexString(), access}, 'abc123').toString();
 
     user.tokens.push({access, token});
-    user.save().then(() => {
+    return user.save().then(() => {
       return token;
     });
   };
