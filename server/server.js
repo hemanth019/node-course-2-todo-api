@@ -8,6 +8,7 @@
   var {mongoose} = require('./db/mongoose');
   var {Todo} = require('./models/todo');
   var {User} = require('./models/user');
+  var {authenticate} = require('./middleware/authenticate');
 
 
 
@@ -122,6 +123,11 @@
       })
     });
 
+
+
+    app.get('/users/me', authenticate, (req, res) => {
+      res.send(req.user);
+    });
 
   app.listen(port, () => {
     console.log(`Started on port ${port}`);
