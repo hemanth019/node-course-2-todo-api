@@ -74,7 +74,6 @@ var UserSchema = new mongoose.Schema({
       //   reject();
       // });
       return Promise.reject();
-
     }
 
     return User.findOne({
